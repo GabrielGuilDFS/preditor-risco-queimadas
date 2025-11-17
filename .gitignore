@@ -1,23 +1,37 @@
-# ambientes e caches
+# =====================
+# AMBIENTES E CACHES
+# =====================
 .venv/
 .venv_local/
+.venv_local_test/
 env/
 venv/
 __pycache__/
 *.pyc
 
-# dados e artefatos grandes
+# =====================
+# DADOS 
+# =====================
 data/
+data/**/*
+data/*
+
+# =====================
+# ARTEFATOS GRANDES
+# =====================
 artifacts/
-models/
 *.joblib
 *.pkl
 *.h5
 *.bin
 *.npz
-*.csv
 
-# IDEs / OS
+# CSVs grandes 
+data/**/*.csv
+
+# =====================
+# IDEs | SISTEMA | INFO LOCAL
+# =====================
 .vscode/
 .idea/
 .DS_Store
