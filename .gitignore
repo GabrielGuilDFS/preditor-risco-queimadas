@@ -19,7 +19,7 @@ data/processed/
 *.joblib
 *.pkl
 
-# notebooks
+# notebooks (opcional: se quiser tracking, remova esta linha)
 notebooks/*.ipynb
 *.ipynb_checkpoints
 
