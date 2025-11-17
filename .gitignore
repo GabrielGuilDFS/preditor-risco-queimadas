@@ -1,0 +1,29 @@
+# ambientes
+.venv/
+venv/
+.venv_local/
+
+# python
+*.pyc
+__pycache__/
+
+# dados brutos e outputs
+data/
+data/raw/
+data/models/
+data/processed/
+*.csv
+*.parquet
+
+# modelos e binários grandes
+*.joblib
+*.pkl
+
+# notebooks
+notebooks/*.ipynb
+*.ipynb_checkpoints
+
+# IDE / sistema
+.vscode/
+.idea/
+.DS_Store
