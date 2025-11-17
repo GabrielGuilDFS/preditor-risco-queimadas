@@ -1,101 +1,116 @@
-<<<<<<< HEAD:README.md
 # 🌎🔥 Preditor de Risco de Queimadas
-=======
 
+**Projeto completo com pipelines de coleta, processamento, NLP, previsão e dashboard.**
+
+---
+
+## 📌 Visão Geral
+
+Este repositório contém um sistema de previsão de risco de queimadas baseado em:
+
+* 📥 **Coleta automática** de dados mensais (BDQueimadas)
+* 🧹 **Processamento e limpeza** dos dados
+* 🤖 **Treinamento de modelo preditivo**
+* 🗞️ **Pipeline NLP** para análise de manchetes jornalísticas
+* 📊 **Dashboard interativo** (Streamlit)
+
+As pastas `data/` são **geradas automaticamente** e **não são versionadas**.
+
+---
+
+## 📁 Estrutura do Projeto
+
+```
+projeto/
+├── data/
+│   ├── raw/
+│   ├── processed/
+│   └── models/
+├── scripts/
+│   └── download_data.sh
+├── src/
+│   ├── data_collection.py
+│   ├── data_processing.py
+│   ├── ml_pipeline.py
+│   ├── nlp_pipeline.py
+│   └── dashboard.py
+├── notebooks/
+│   └── Relatório.ipynb
+├── requirements.txt
+└── README.md
+```
+
+---
+
+## 🚀 Como Rodar o Projeto
+
+### 1️⃣ Criar ambiente virtual
+
+```bash
 python3 -m venv .venv
 source .venv/bin/activate
+```
 
------------------------------------------
-2) INSTALAR DEPENDÊNCIAS
------------------------------------------
+### 2️⃣ Instalar dependências
 
+```bash
 pip install --upgrade pip
 pip install -r requirements.txt
+```
 
------------------------------------------
-3) BAIXAR DADOS (OBRIGATÓRIO)
------------------------------------------
+### 3️⃣ Baixar dados (obrigatório)
 
+```bash
 bash scripts/download_data.sh
+```
 
-Isso vai preencher:
+### 4️⃣ Processar os dados
 
-data/raw/
-data/processed/
-
------------------------------------------
-4) EXECUTAR PIPELINE DE PROCESSAMENTO
------------------------------------------
-
+```bash
 python src/data_processing.py
+```
 
------------------------------------------
-5) EXECUTAR PIPELINE DE NLP (OPCIONAL)
------------------------------------------
+### 5️⃣ Pipeline NLP (opcional)
 
+```bash
 python src/nlp_pipeline.py
+```
 
-Se aparecer a mensagem:
-"data/raw/texts.csv não encontrada"
+### 6️⃣ Treinar modelo
 
-Crie um arquivo texts.csv assim:
-
-echo "id,date,text,source" > data/raw/texts.csv
-echo "1,2025-01-01,Focos aumentam no estado,g1" >> data/raw/texts.csv
-
------------------------------------------
-6) TREINAR MODELO (OPCIONAL)
------------------------------------------
-
+```bash
 python src/ml_pipeline.py
+```
 
-O modelo será salvo em:
+### 7️⃣ Rodar o dashboard 🚀
 
-data/models/
-
------------------------------------------
-7) INICIAR DASHBOARD (STREAMLIT)
------------------------------------------
-
+```bash
 streamlit run src/dashboard.py
+```
 
-O dashboard abrirá no navegador local:
+Acesse:
+👉 **[http://localhost:8501](http://localhost:8501)**
 
-http://localhost:8501
+---
 
------------------------------------------
-8) ESTRUTURA DO PROJETO
------------------------------------------
+## 🧪 Teste rápido (Smoke Test)
 
-data/
-    raw/        -> dados brutos baixados
-    processed/  -> dados processados
-    models/     -> modelo treinado
-src/
-    data_collection.py
-    data_processing.py
-    ml_pipeline.py
-    nlp_pipeline.py
-    dashboard.py
-scripts/
-    download_data.sh
-notebooks/
-requirements.txt
-README.txt
+```bash
+python src/data_collection.py
+python src/data_processing.py
+python src/nlp_pipeline.py
+python src/ml_pipeline.py
+streamlit run src/dashboard.py
+```
 
------------------------------------------
-9) AJUDA
------------------------------------------
+Se tudo rodar sem erro → instalação perfeita.
 
-Se algum erro ocorrer ao salvar arquivos Parquet:
-instale manualmente:
+---
 
+## 🛠 Dependências úteis (caso necessário)
+
+```bash
 pip install pyarrow
-
-Se erro for de BeautifulSoup:
-
 pip install beautifulsoup4
-
-Se erro for de certifi/SSL:
-
 pip install certifi
+```
