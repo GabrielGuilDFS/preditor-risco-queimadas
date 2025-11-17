@@ -1,0 +1,11 @@
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+requests
+geopandas
+spacy
+transformers
+joblib
+flask  # ou streamlit/dash para dashboard
