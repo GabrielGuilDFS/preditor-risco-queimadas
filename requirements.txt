@@ -3,9 +3,34 @@ numpy
 scikit-learn
 matplotlib
 seaborn
+
+# web scraping
 requests
-geopandas
+beautifulsoup4
+lxml
+html5lib
+feedparser
+
+# parquet
+pyarrow
+
+# NLP
 spacy
 transformers
+
+# ML utils
 joblib
-flask  # ou streamlit/dash para dashboard
+
+# geodados
+geopandas
+shapely
+pyproj
+fiona
+rtree
+
+# dashboard
+streamlit
+
+# misc utils
+tqdm
+certifi
