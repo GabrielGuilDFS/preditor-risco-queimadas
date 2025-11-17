@@ -1,187 +1,114 @@
-Perfeito — aqui está um **README.md completo, estilizado, profissional e pronto para colocar no GitHub**.
-Ele foi escrito especificamente para o SEU projeto e inclui instruções claras e copiáveis para qualquer usuário rodar tudo do zero.
+PREDITOR DE RISCO DE QUEIMADAS
+==============================
 
-Copie e cole exatamente o conteúdo abaixo em `README.md`.
+Este projeto contém pipelines completos de:
+- Coleta de dados
+- Processamento e limpeza
+- NLP (análise de textos)
+- Treinamento de modelo de previsão
+- Dashboard interativo (Streamlit)
 
----
+As pastas data/ estão vazias porque os arquivos são grandes
+e devem ser baixados pelo script scripts/download_data.sh.
 
-# 🌎🔥 Preditor de Risco de Queimadas
+-----------------------------------------
+1) CRIAR AMBIENTE VIRTUAL
+-----------------------------------------
 
-Projeto completo de coleta, processamento, modelagem e visualização de dados de queimadas no Brasil.
-
----
-
-## 📌 **Visão Geral**
-
-Este projeto implementa um pipeline completo envolvendo:
-
-* 📥 **Coleta automatizada de dados** mensal (BDQueimadas)
-* 🧹 **Tratamento, limpeza e unificação** dos datasets
-* 🧠 **Treinamento de modelo preditivo** (ML)
-* 🗞️ **Pipeline NLP** para análise de manchetes jornalísticas
-* 📊 **Dashboard interativo (Streamlit)** para visualização dos resultados
-
-As pastas `data/` são **geradas automaticamente** pelo script e **não sobem para o GitHub**.
-
----
-
-# 📁 Estrutura do Projeto
-
-```
-projeto/
-├── data/
-│   ├── raw/           # Dados brutos baixados pelo script
-│   ├── processed/     # Dados processados
-│   └── models/        # Modelos treinados
-│
-├── scripts/
-│   └── download_data.sh   # Script oficial para baixar os dados
-│
-├── src/
-│   ├── data_collection.py
-│   ├── data_processing.py
-│   ├── ml_pipeline.py
-│   ├── nlp_pipeline.py
-│   └── dashboard.py
-│
-├── notebooks/
-│   └── Relatório.ipynb
-│
-├── requirements.txt
-└── README.md
-```
-
----
-
-# 🚀 **Como Rodar o Projeto do Zero (Passo a Passo)**
-
-## 1️⃣ Criar ambiente virtual
-
-```bash
 python3 -m venv .venv
 source .venv/bin/activate
-```
 
----
+-----------------------------------------
+2) INSTALAR DEPENDÊNCIAS
+-----------------------------------------
 
-## 2️⃣ Instalar dependências
-
-```bash
 pip install --upgrade pip
 pip install -r requirements.txt
-```
 
----
+-----------------------------------------
+3) BAIXAR DADOS (OBRIGATÓRIO)
+-----------------------------------------
 
-## 3️⃣ Baixar dados (obrigatório antes de rodar qualquer pipeline)
-
-```bash
 bash scripts/download_data.sh
-```
 
-O script irá preencher:
+Isso vai preencher:
 
-```
 data/raw/
 data/processed/
-```
 
----
+-----------------------------------------
+4) EXECUTAR PIPELINE DE PROCESSAMENTO
+-----------------------------------------
 
-## 4️⃣ Processar os dados
-
-```bash
 python src/data_processing.py
-```
 
-Isso gera artefatos em `data/processed/`.
+-----------------------------------------
+5) EXECUTAR PIPELINE DE NLP (OPCIONAL)
+-----------------------------------------
 
----
-
-## 5️⃣ Rodar pipeline de NLP (opcional)
-
-```bash
 python src/nlp_pipeline.py
-```
 
-Se aparecer:
+Se aparecer a mensagem:
+"data/raw/texts.csv não encontrada"
 
-```
-data/raw/texts.csv não encontrada
-```
+Crie um arquivo texts.csv assim:
 
-Crie rapidamente um arquivo de exemplo:
-
-```bash
 echo "id,date,text,source" > data/raw/texts.csv
 echo "1,2025-01-01,Focos aumentam no estado,g1" >> data/raw/texts.csv
-```
 
----
+-----------------------------------------
+6) TREINAR MODELO (OPCIONAL)
+-----------------------------------------
 
-## 6️⃣ Treinar modelo (opcional)
-
-```bash
 python src/ml_pipeline.py
-```
 
 O modelo será salvo em:
 
-```
 data/models/
-```
 
----
+-----------------------------------------
+7) INICIAR DASHBOARD (STREAMLIT)
+-----------------------------------------
 
-## 7️⃣ Rodar o dashboard (Streamlit)
-
-```bash
 streamlit run src/dashboard.py
-```
 
-Acesse no navegador:
+O dashboard abrirá no navegador local:
 
-🔗 [http://localhost:8501](http://localhost:8501)
+http://localhost:8501
 
----
+-----------------------------------------
+8) ESTRUTURA DO PROJETO
+-----------------------------------------
 
-# 🧪 **Smoke Test (para confirmar que tudo está OK)**
+data/
+    raw/        -> dados brutos baixados
+    processed/  -> dados processados
+    models/     -> modelo treinado
+src/
+    data_collection.py
+    data_processing.py
+    ml_pipeline.py
+    nlp_pipeline.py
+    dashboard.py
+scripts/
+    download_data.sh
+notebooks/
+requirements.txt
+README.txt
 
-Com o ambiente virtual ativo, execute:
+-----------------------------------------
+9) AJUDA
+-----------------------------------------
 
-```bash
-python src/data_collection.py
-python src/data_processing.py
-python src/nlp_pipeline.py
-python src/ml_pipeline.py
-```
+Se algum erro ocorrer ao salvar arquivos Parquet:
+instale manualmente:
 
-E abra o dashboard:
-
-```bash
-streamlit run src/dashboard.py
-```
-
-Se todos executarem **sem erro**, o projeto está funcionando perfeitamente.
-
----
-
-# 🔧 Dependências Específicas (caso necessárias)
-
-### Para Parquet:
-
-```bash
 pip install pyarrow
-```
 
-### Para BeautifulSoup:
+Se erro for de BeautifulSoup:
 
-```bash
 pip install beautifulsoup4
-```
 
-### Para problemas de SSL:
+Se erro for de certifi/SSL:
 
-```bash
 pip install certifi
-```
