@@ -1,10 +1,3 @@
-Perfeito — aqui está um **README.md completo, estilizado, profissional e pronto para colocar no GitHub**.
-Ele foi escrito especificamente para o SEU projeto e inclui instruções claras e copiáveis para qualquer usuário rodar tudo do zero.
-
-Copie e cole exatamente o conteúdo abaixo em `README.md`.
-
----
-
 # 🌎🔥 Preditor de Risco de Queimadas
 
 Projeto completo de coleta, processamento, modelagem e visualização de dados de queimadas no Brasil.
