@@ -1,19 +1,6 @@
-PREDITOR DE RISCO DE QUEIMADAS
-==============================
-
-Este projeto contém pipelines completos de:
-- Coleta de dados
-- Processamento e limpeza
-- NLP (análise de textos)
-- Treinamento de modelo de previsão
-- Dashboard interativo (Streamlit)
-
-As pastas data/ estão vazias porque os arquivos são grandes
-e devem ser baixados pelo script scripts/download_data.sh.
-
------------------------------------------
-1) CRIAR AMBIENTE VIRTUAL
------------------------------------------
+<<<<<<< HEAD:README.md
+# 🌎🔥 Preditor de Risco de Queimadas
+=======
 
 python3 -m venv .venv
 source .venv/bin/activate
